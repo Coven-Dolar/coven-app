@@ -34,6 +34,10 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+          },
+          {
+            path: 'noticia/:url',
+            loadChildren: () => import('../tab3/noticia/noticia.module').then( m => m.NoticiaPageModule)
           }
         ]
       },

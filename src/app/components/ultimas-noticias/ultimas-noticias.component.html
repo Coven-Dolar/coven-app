@@ -1,0 +1,23 @@
+<h3>
+  Últimas noticias
+</h3>
+<ion-slides pager="true" [options]="slideOpts" #SliderProdutos>
+  <ion-slide *ngFor="let noticia of noticias">
+    <ion-card class="ion-no-margin">
+      <img src="{{noticia.foto_principal}}" />
+      <ion-card-header>
+        <ion-card-title>{{noticia.titulo}}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        {{noticia.resumen}}
+      </ion-card-content>
+      <ion-button (click)="abrirNoticia(noticia.url)" size="small" class="ion-margin" item-right>
+        <ion-icon name="search"></ion-icon>
+        Continuar leyendo
+      </ion-button>
+
+    </ion-card>
+  </ion-slide>
+</ion-slides>
+
