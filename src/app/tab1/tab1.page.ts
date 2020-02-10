@@ -29,7 +29,7 @@ export class Tab1Page {
       movilidad: '1.5'
     },
     {
-      nombre: 'CHATARRA DE HIERRO(HSM1 FOB *)',
+      nombre: 'HSM1 FOB',
       precio_venta: '310,00',
       precio_compra: '250,00',
       par: 'USD/T',

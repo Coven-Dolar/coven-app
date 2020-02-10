@@ -14,19 +14,19 @@ export class UltimasNoticiasComponent implements OnInit {
   noticias = [
     {
       foto_principal: '../assets/images/venezuela.jpeg',
-      titulo: 'Noticia numero uno de la app',
+      titulo: 'Analizan cambios en los planes sociales: deberán trabajar para cobrar un salario mínimo.',
       resumen: 'sasdas da dasdasd ssg f adgfdsagdgff sf afa ad fadf dfa sdfasdf asdf asdfas fas fsdf asdf asfasdf sdf fas fds fdsf adf',
       url: '',
     },
     {
       foto_principal: '../assets/images/venezuela.jpeg',
-      titulo: 'Noticia numero dos de la app',
+      titulo: 'Analizan cambios en los planes sociales: deberán trabajar para cobrar un salario mínimo.',
       resumen: 'sasdas da dasdasd ssg f adgfdsagdgff sf afa ad fadf dfa sdfasdf asdf asdfas fas fsdf asdf asfasdf sdf fas fds fdsf adf',
       url: '',
     },
     {
       foto_principal: '../assets/images/venezuela.jpeg',
-      titulo: 'Noticia numero tres de la app',
+      titulo: 'Analizan cambios en los planes sociales: deberán trabajar para cobrar un salario mínimo.',
       resumen: 'sasdas da dasdasd ssg f adgfdsagdgff sf afa ad fadf dfa sdfasdf asdf asdfas fas fsdf asdf asfasdf sdf fas fds fdsf adf',
       url: '',
     }

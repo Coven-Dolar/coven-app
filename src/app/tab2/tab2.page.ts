@@ -8,21 +8,21 @@ import { Component } from '@angular/core';
 export class Tab2Page {
   datos = [
     {
-      nombre: 'CHATARRA DE HIERRO(HSM1 CIF *)',
+      nombre: 'HSM1 CIF',
       precio_venta: '310,00',
       precio_compra: '250,00',
       par: 'USD/T',
       movilidad: '1.5'
     },
     {
-      nombre: 'CHATARRA DE HIERRO(HSM1 EXWORK *)',
+      nombre: 'HSM1 EXWORK',
       precio_venta: '310,00',
       precio_compra: '250,00',
       par: 'USD/T',
       movilidad: '1.5'
     },
     {
-      nombre: 'CHATARRA DE PLASTICO',
+      nombre: 'PLASTICO',
       precio_venta: '310,00',
       precio_compra: '250,00',
       par: 'USD/T',

@@ -1,23 +1,25 @@
-<h3>
-  Últimas noticias
-</h3>
-<ion-slides pager="true" [options]="slideOpts" #SliderProdutos>
-  <ion-slide *ngFor="let noticia of noticias">
-    <ion-card class="ion-no-margin">
-      <img src="{{noticia.foto_principal}}" />
-      <ion-card-header>
-        <ion-card-title>{{noticia.titulo}}</ion-card-title>
-      </ion-card-header>
 
-      <ion-card-content>
-        {{noticia.resumen}}
-      </ion-card-content>
-      <ion-button (click)="abrirNoticia(noticia.url)" size="small" class="ion-margin" item-right>
-        <ion-icon name="search"></ion-icon>
-        Continuar leyendo
-      </ion-button>
-
-    </ion-card>
-  </ion-slide>
-</ion-slides>
-
+  <h3 class="padding">Últimas noticias</h3>
+  <ion-slides pager="true" [options]="slideOpts" #SliderProdutos>
+    <ion-slide class="padding" *ngFor="let noticia of noticias">
+      <ion-card class="ion-no-margin">
+        <ion-card-header class="ion-no-padding">
+          <ion-card-title>{{noticia.titulo}}</ion-card-title>
+        </ion-card-header>
+        <ion-row class="ion-margin-top">
+          <ion-col size="4" class="ion-no-padding">
+            <img src="{{noticia.foto_principal}}" />
+          </ion-col>
+          <ion-col size="8" style="padding-top: 0;">
+            <ion-card-content class="ion-no-padding ion-text-justify">
+              {{noticia.resumen}}
+            </ion-card-content>
+            <ion-button (click)="abrirNoticia(noticia.url)" size="small" class="ion-margin">
+              <ion-icon name="search"></ion-icon>
+              Continuar leyendo
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
