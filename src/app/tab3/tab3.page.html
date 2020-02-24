@@ -1,17 +1,17 @@
 <app-header></app-header>
 <ion-content>
     <ion-card *ngFor="let noticia of noticias">
-        <ion-card-header>
+        <ion-card-header class="ion-no-padding">
             <ion-card-title>{{noticia.titulo}}</ion-card-title>
-            <ion-card-subtitle>{{noticia.fecha_creacion | date: 'dd-MM-yyyy'}}</ion-card-subtitle>
+            <small>{{noticia.fecha_creacion | date: 'medium'}}</small>
         </ion-card-header>
         <ion-row>
             <ion-col size="4">
-                <img src="{{noticia.foto_principal}}" />
+                <img src="{{noticia.foto_miniatura}}" />
             </ion-col>
             <ion-col size="8">
                 <ion-card-content no-padding>
-                    {{noticia.resumen}}
+                    {{noticia.resumen | slice:0:185}}...
                 </ion-card-content>
                 <ion-row justify-content-end>
                     <ion-col size="9">
@@ -22,11 +22,7 @@
                     </ion-col>
                 </ion-row>
             </ion-col>
-
-
-
         </ion-row>
-
 
     </ion-card>
 </ion-content>

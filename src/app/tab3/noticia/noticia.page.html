@@ -1,5 +1,20 @@
 <app-header></app-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+    <ion-card class="ion-no-margin">
+        <ion-card-header class="ion-no-padding">
+            <ion-card-title>{{noticia.titulo}}</ion-card-title>
+            <small>{{noticia.fecha_creacion | date: 'medium'}}</small>
+        </ion-card-header>
+        <ion-row class="ion-margin-top">
+            <ion-col size="12" class="ion-no-padding">
+                <img src="{{noticia.foto_principal}}" />
+            </ion-col>
+            <ion-col class="ion-margin-top" size="12" style="padding-top: 0;">
+                <ion-card-content [innerHTML] = "noticia.descripcion" class="ion-no-padding ion-text-justify">
+                </ion-card-content>
 
+            </ion-col>
+        </ion-row>
+    </ion-card>
 </ion-content>

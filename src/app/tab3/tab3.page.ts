@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
+import {RequestAPI} from '../services/RequestAPI';
 
 @Component({
   selector: 'app-tab3',
@@ -47,7 +48,13 @@ export class Tab3Page {
   ];
   constructor(
       private route: Router,
-  ) {}
+      private http: RequestAPI,
+  ) {
+    this.http.get('blog/post/').subscribe((response: any) => {
+      console.log(response);
+      this.noticias = response.results;
+    });
+  }
 
   abrirNoticia(url: string) {
     this.route.navigate(['/tabs/tab3/noticia', url]);

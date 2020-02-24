@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   URL_API: 'http://127.0.0.1:8000/api/v1/',
-  API_TOKEN: ''
+  API_TOKEN: 'fd86b47d7f457e13c8ba9f2ef65873e88dadde84'
 };
 
 /*
