@@ -70,13 +70,24 @@ export class RequestAPI {
      * url recebe função a ser chamada na API
      * filtro valor que será filtrado na API
      */
-    public get(url: string, dados = {}) {
-        return this.http.get(
-            this.ambiente + url,
-            {
-                params: dados
-            }
-        );
+    public get(url: string, dados = {}, prv = true) {
+        if (prv) {
+            return this.http.get(
+                this.ambiente + url,
+                {
+                    params: dados,
+                    headers: this.getHeader()
+                }
+            );
+        } else {
+            return this.http.get(
+                this.ambiente + url,
+                {
+                    params: dados
+                }
+            );
+        }
+
     }
 
     /**

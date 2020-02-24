@@ -12,26 +12,7 @@ export class UltimasNoticiasComponent implements OnInit {
     initialSlide: 0,
     speed: 400
   };
-  noticias = [
-    {
-      foto_principal: '../assets/images/venezuela.jpeg',
-      titulo: 'Analizan cambios en los planes sociales: deberán trabajar para cobrar un salario mínimo.',
-      resumen: 'sasdas da dasdasd ssg f adgfdsagdgff sf afa ad fadf dfa sdfasdf asdf asdfas fas fsdf asdf asfasdf sdf fas fds fdsf adf',
-      url: '',
-    },
-    {
-      foto_principal: '../assets/images/venezuela.jpeg',
-      titulo: 'Analizan cambios en los planes sociales: deberán trabajar para cobrar un salario mínimo.',
-      resumen: 'sasdas da dasdasd ssg f adgfdsagdgff sf afa ad fadf dfa sdfasdf asdf asdfas fas fsdf asdf asfasdf sdf fas fds fdsf adf',
-      url: '',
-    },
-    {
-      foto_principal: '../assets/images/venezuela.jpeg',
-      titulo: 'Analizan cambios en los planes sociales: deberán trabajar para cobrar un salario mínimo.',
-      resumen: 'sasdas da dasdasd ssg f adgfdsagdgff sf afa ad fadf dfa sdfasdf asdf asdfas fas fsdf asdf asfasdf sdf fas fds fdsf adf',
-      url: '',
-    }
-  ];
+  noticias = [];
   constructor(
       private route: Router,
       private http: RequestAPI,
