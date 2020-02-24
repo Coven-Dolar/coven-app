@@ -5,9 +5,8 @@ ion-card-title {
 ion-card-content {
   font-size: 10pt;
   font-family: FontNormal;
-}
-ion-card-content {
-
+  max-height: 250px;
+  overflow: hidden;
 }
 .padding {
   padding: 3px 6px;

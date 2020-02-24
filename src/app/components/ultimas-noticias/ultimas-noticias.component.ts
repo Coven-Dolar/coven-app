@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {RequestAPI} from '../../services/RequestAPI';
 
 @Component({
   selector: 'app-ultimas-noticias',
@@ -31,9 +32,17 @@ export class UltimasNoticiasComponent implements OnInit {
       url: '',
     }
   ];
-  constructor(private route: Router) { }
+  constructor(
+      private route: Router,
+      private http: RequestAPI,
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.http.get('blog/post/').subscribe( (response: any) => {
+      console.log(response);
+      this.noticias = response.results;
+    });
+  }
   abrirNoticia(url: string) {
     this.route.navigate(['/tabs/tab3/noticia', url]);
   }
