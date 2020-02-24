@@ -103,3 +103,15 @@ ion-card {
 .swiper-slide {
   text-align: left;
 }
+
+
+.modal-filter {
+  --height: 60%;
+  --width: 90%;
+}
+
+
+ion-content {
+  --background: url(assets/images/bg.svg);
+  --color: #007CD1;
+}
