@@ -23,7 +23,8 @@ export class HeaderComponent implements OnInit {
 
   async openModalFilter() {
     const modal = await this.modal.create({
-      component: ModalFiltrosPage
+      component: ModalFiltrosPage,
+      cssClass: 'modal-filter'
     });
     modal.onDidDismiss().then(() => {
           this.event.publish('post:filter');

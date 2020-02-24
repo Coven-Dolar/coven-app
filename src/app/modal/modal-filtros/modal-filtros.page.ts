@@ -27,6 +27,7 @@ export class ModalFiltrosPage implements OnInit {
   }
   redirect(url: string) {
     this.route.navigateByUrl('/tabs/tab3/' + url);
+    this.closeModal();
   }
 
 }
