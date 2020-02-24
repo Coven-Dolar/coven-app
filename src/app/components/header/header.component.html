@@ -5,10 +5,10 @@
         <img src="../assets/images/logo.svg">
       </ion-col>
       <ion-col size="3"></ion-col>
-      <ion-col size="2">
+      <ion-col size="2" (click)="openModalFilter()" *ngIf="showFilter">
         <img src="../assets/images/filter.svg" class="refresh">
       </ion-col>
-      <ion-col size="2" class="ion-text-center">
+      <ion-col size="2" class="ion-text-center ion-justify-content-end">
         <img src="../assets/images/refresh.svg" class="refresh">
       </ion-col>
     </ion-row>

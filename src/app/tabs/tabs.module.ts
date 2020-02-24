@@ -6,13 +6,14 @@ import { FormsModule } from '@angular/forms';
 import { TabsPageRoutingModule } from './tabs-routing.module';
 
 import { TabsPage } from './tabs.page';
+import {ModalFiltrosPageModule} from '../modal/modal-filtros/modal-filtros.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    TabsPageRoutingModule
+    TabsPageRoutingModule, ModalFiltrosPageModule
   ],
   declarations: [TabsPage]
 })
