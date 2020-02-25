@@ -13,31 +13,26 @@
     <ion-col size="4">
       <ion-label>Mercados</ion-label>
     </ion-col>
-    <ion-col size="3">
-      <ion-label>Compra</ion-label>
+    <ion-col size="5">
+      <ion-label>Precio</ion-label>
     </ion-col>
     <ion-col size="3">
-      <ion-label>Venta</ion-label>
-    </ion-col>
-    <ion-col size="2">
     </ion-col>
   </ion-row>
   <ion-row *ngFor="let item of datos" class="datos-mercado">
     <ion-col size="4" class="header-table">
       <ion-label class="name-commoditie">{{item.nombre}}</ion-label>
     </ion-col>
-    <ion-col size="3" class="header-table">
-      <ion-label>{{item.precio_compra}} <small>{{item.par}}</small></ion-label>
+    <ion-col size="5" class="header-table">
+      <ion-label>{{item.precio}} <small>{{item.par}}</small></ion-label>
     </ion-col>
+
     <ion-col size="3" class="header-table">
-      <ion-label>{{item.precio_venta}}  <small>{{item.par}}</small></ion-label>
-    </ion-col>
-    <ion-col size="2" class="header-table">
-      <div *ngIf="item.movilidad > 0" class="positivo">
+      <div *ngIf="item.movilidad > 0" class="positivo ion-text-center">
         <!--<ion-icon name="arrow-down" style="color: #0ec254"></ion-icon>-->
         + {{item.movilidad}}%
       </div>
-      <div *ngIf="item.movilidad < 0" class="negativo">
+      <div *ngIf="item.movilidad < 0" class="negativo ion-text-center">
         {{item.movilidad}}%
       </div>
     </ion-col>
