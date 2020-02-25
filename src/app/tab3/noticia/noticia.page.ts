@@ -9,7 +9,7 @@ import {RequestAPI} from '../../services/RequestAPI';
 })
 export class NoticiaPage implements OnInit {
   noticia: any;
-
+  request: boolean;
   constructor(
       private activatedRoute: ActivatedRoute,
       private http: RequestAPI,
@@ -17,10 +17,10 @@ export class NoticiaPage implements OnInit {
 
   ngOnInit() {
     const url = this.activatedRoute.snapshot.paramMap.get('url');
-    console.log(url);
+    this.request = true;
     this.http.get('blog/post/' + url).subscribe( (response: any) => {
-      console.log(response);
       this.noticia = response;
+      this.request = false;
     });
   }
   ionViewDidEnter() {

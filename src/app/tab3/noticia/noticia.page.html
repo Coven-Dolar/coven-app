@@ -1,7 +1,15 @@
 <app-header></app-header>
 
 <ion-content class="ion-padding">
-    <ion-card class="ion-no-margin">
+    <ion-row *ngIf="request" class="ion-justify-content-center">
+        <ion-col size="6" class="ion-align-items-center">
+            <ion-row class="spinnerCenter">
+                <ion-spinner></ion-spinner>
+                <h4>Cargando datos...</h4>
+            </ion-row>
+        </ion-col>
+    </ion-row>
+    <ion-card class="ion-no-margin" *ngIf="!request">
         <ion-card-header class="ion-no-padding">
             <ion-card-title>{{noticia.titulo}}</ion-card-title>
             <small>{{noticia.fecha_creacion | date: 'medium'}}</small>
