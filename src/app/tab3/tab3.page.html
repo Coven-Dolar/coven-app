@@ -1,28 +1,39 @@
 <app-header [showFilter]="true"></app-header>
 <ion-content>
-    <ion-card *ngFor="let noticia of noticias">
-        <ion-card-header class="ion-no-padding">
-            <ion-card-title>{{noticia.titulo}}</ion-card-title>
-            <small>{{noticia.fecha_creacion | date: 'medium'}}</small>
-        </ion-card-header>
-        <ion-row>
-            <ion-col size="4">
-                <img src="{{noticia.foto_miniatura}}" />
-            </ion-col>
-            <ion-col size="8">
-                <ion-card-content class="ion-no-padding">
-                    {{noticia.resumen | slice:0:185}}...
-                </ion-card-content>
-                <ion-row class="ion-justify-content-end">
-                    <ion-col size="9">
-                        <ion-button (click)="abrirNoticia(noticia.url)" size="small" class="ion-margin ion-float-right">
-                            <ion-icon name="search"></ion-icon>
-                            Leer Notícia
-                        </ion-button>
-                    </ion-col>
-                </ion-row>
-            </ion-col>
-        </ion-row>
+    <ion-row *ngIf="request" class="ion-justify-content-center">
+        <ion-col size="6" class="ion-align-items-center">
+            <ion-row class="spinnerCenter">
+                <ion-spinner></ion-spinner>
+                <h4>Cargando datos...</h4>
+            </ion-row>
+        </ion-col>
+    </ion-row>
+    <div *ngIf="!request">
+        <ion-card *ngFor="let noticia of noticias">
+            <ion-card-header class="ion-no-padding">
+                <ion-card-title>{{noticia.titulo}}</ion-card-title>
+                <small>{{noticia.fecha_creacion | date: 'medium'}}</small>
+            </ion-card-header>
+            <ion-row>
+                <ion-col size="4">
+                    <img src="{{noticia.foto_miniatura}}" />
+                </ion-col>
+                <ion-col size="8">
+                    <ion-card-content class="ion-no-padding">
+                        {{noticia.resumen | slice:0:185}}...
+                    </ion-card-content>
+                    <ion-row class="ion-justify-content-end">
+                        <ion-col size="9">
+                            <ion-button (click)="abrirNoticia(noticia.url)" size="small" class="ion-margin ion-float-right">
+                                <ion-icon name="search"></ion-icon>
+                                Leer Notícia
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
 
-    </ion-card>
+        </ion-card>
+    </div>
+
 </ion-content>

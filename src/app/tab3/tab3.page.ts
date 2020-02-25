@@ -9,6 +9,7 @@ import {RequestAPI} from '../services/RequestAPI';
 })
 export class Tab3Page {
   noticias = [];
+  request: boolean;
   constructor(
       private route: Router,
       private activatedRoute: ActivatedRoute,
@@ -16,6 +17,7 @@ export class Tab3Page {
   ) { }
 
   async ionViewDidEnter() {
+    this.request = true;
     let url = this.activatedRoute.snapshot.paramMap.get('categoria');
     if (url !== null) {
       url = 'blog/post/' + 'category/' + url;
@@ -24,6 +26,7 @@ export class Tab3Page {
     }
     this.http.get(url).subscribe((response: any) => {
       this.noticias = response.results;
+      this.request = false;
     });
   }
 

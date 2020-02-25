@@ -8,7 +8,7 @@ import {RequestAPI} from '../services/RequestAPI';
 })
 export class Tab1Page {
   datos = [];
-
+  request: boolean;
   today = new Date();
   constructor(
       private http: RequestAPI
@@ -19,8 +19,10 @@ export class Tab1Page {
   }
 
   async ionViewDidEnter() {
+    this.request = true;
     this.http.get('indicadores/mercados/internacionales/').subscribe( (response: any) => {
       this.datos = response;
+      this.request = false;
     });
   }
 

@@ -8,6 +8,7 @@ import {RequestAPI} from '../../services/RequestAPI';
   styleUrls: ['./ultimas-noticias.component.scss'],
 })
 export class UltimasNoticiasComponent implements OnInit {
+  request: boolean;
   slideOpts = {
     initialSlide: 0,
     speed: 400
@@ -19,9 +20,10 @@ export class UltimasNoticiasComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.request = true;
     this.http.get('blog/post/').subscribe( (response: any) => {
-      console.log(response);
       this.noticias = response.results;
+      this.request = false;
     });
   }
   abrirNoticia(url: string) {
