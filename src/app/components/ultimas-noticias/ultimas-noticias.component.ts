@@ -12,7 +12,7 @@ export class UltimasNoticiasComponent implements OnInit {
     initialSlide: 0,
     speed: 400
   };
-  noticias = [];
+  noticias: any;
   constructor(
       private route: Router,
       private http: RequestAPI,

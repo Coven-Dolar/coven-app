@@ -8,7 +8,7 @@ import {RequestAPI} from '../../services/RequestAPI';
   styleUrls: ['./noticia.page.scss'],
 })
 export class NoticiaPage implements OnInit {
-  noticia = [];
+  noticia: any;
 
   constructor(
       private activatedRoute: ActivatedRoute,
