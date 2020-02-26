@@ -11,13 +11,15 @@ import { AppComponent } from './app.component';
 import {SharedModule} from './components/shared/shared.module';
 import {HttpClientModule} from '@angular/common/http';
 
+import { FCM } from '@ionic-native/fcm/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, SharedModule, HttpClientModule],
   providers: [
     StatusBar,
-    SplashScreen,
+    SplashScreen, FCM,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

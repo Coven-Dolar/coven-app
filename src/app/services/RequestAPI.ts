@@ -23,13 +23,13 @@ export class RequestAPI {
 
     public getBody(form: any) {
         return new Promise(resolve => {
-            const body = new URLSearchParams();
+            const body: FormData = new FormData();
             // tslint:disable-next-line:forin
             for (const key in form) {
                 body.append(key, form[key]);
             }
-            console.log(body.toString());
-            resolve(body.toString());
+            console.log(body);
+            resolve(body);
         });
     }
 
@@ -38,18 +38,16 @@ export class RequestAPI {
      * url recebe função a ser chamada na API
      * dados recebe uma string
      */
-    public post(url: string, form: any, isPrivate = false): Observable<any> {
+    public post(url: string, form: any, isPrivate = true): Observable<any> {
         let headerRequest: any;
-        if (!isPrivate) {
+        if (isPrivate) {
             headerRequest = {
-                headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded'),
+                headers: this.getHeader(),
             };
         } else {
-            headerRequest = {
-                headers: this.getHeader().set('Content-Type', 'application/x-www-form-urlencoded'),
-            };
+            headerRequest = { };
         }
-
+        console.log(headerRequest);
         return this.http.post(
             this.ambiente + url,
             form,

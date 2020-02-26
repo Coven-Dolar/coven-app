@@ -76,11 +76,14 @@ ion-tab-button:focus {
 .name-commoditie {
   font-family: FontTitulo;
 }
-.positivo, .negativo {
+.positivo, .negativo, .default {
   background: #0ec254; font-family: FontSubTitulo;
   color: white;
   padding: 4px 6px;
   border-radius: 6px;
+}
+.default {
+  background: #989aa2;
 }
 .negativo {
   background: red;
@@ -105,6 +108,13 @@ ion-card {
 }
 .swiper-slide {
   text-align: left;
+}
+.spinnerCenter {
+  display: flex; margin-top: 30%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 

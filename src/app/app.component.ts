@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import {FirebaseX} from '@ionic-native/firebase-x/ngx';
+import {FCM} from '@ionic-native/fcm/ngx';
+import {RequestAPI} from './services/RequestAPI';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +16,9 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private firebase: FCM,
+    private http: RequestAPI,
   ) {
     this.initializeApp();
   }
@@ -22,6 +27,25 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.setToken();
+    });
+  }
+
+  async setToken() {
+    const token = await this.firebase.getToken();
+    let platf = 'android';
+    if (!this.platform.is('android')) {
+      platf = 'ios';
+    }
+    const jsonRequest = {
+      device_id: token.substring(1, 100),
+      registration_id: token,
+      type: platf
+    }
+    this.http.post('devices', await this.http.getBody(jsonRequest)).subscribe( (resposta: any) => {
+      console.log(resposta);
+    }, error => {
+
     });
   }
 }
