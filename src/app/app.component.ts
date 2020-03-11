@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import {FirebaseX} from '@ionic-native/firebase-x/ngx';
 import {FCM} from '@ionic-native/fcm/ngx';
 import {RequestAPI} from './services/RequestAPI';
 
