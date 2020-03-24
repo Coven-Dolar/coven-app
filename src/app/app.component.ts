@@ -40,7 +40,8 @@ export class AppComponent {
       device_id: token.substring(1, 100),
       registration_id: token,
       type: platf
-    }
+    };
+    console.log(token);
     this.http.post('devices', await this.http.getBody(jsonRequest)).subscribe( (resposta: any) => {
       console.log(resposta);
     }, error => {
