@@ -9,7 +9,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore jaspe.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk jaspe",
+    "deploy-pack": "~/Library/Android/sdk/build-tools/28.0.3/zipalign -v 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk coven.apk"
   },
   "private": true,
   "dependencies": {
