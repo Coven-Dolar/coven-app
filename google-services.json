@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "128604759297",
+    "firebase_url": "https://coven-jaspesoft-com.firebaseio.com",
+    "project_id": "coven-jaspesoft-com",
+    "storage_bucket": "coven-jaspesoft-com.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128604759297:android:d3ead0eaf5e9a4d74b2700",
+        "android_client_info": {
+          "package_name": "coven.jaspesoft.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "128604759297-p5i56oiceqp5nj1k1ch0cdim28v7lrng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwCIAR2_R219uFmnoLUAiUm1Avgn8cSCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "128604759297-p5i56oiceqp5nj1k1ch0cdim28v7lrng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
