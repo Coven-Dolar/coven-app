@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>128604759297-gtvbuf5qsjnoim10nrknv4iphvtcistt.apps.googleusercontent.com</string>
+	<string>128604759297-28vb88b6a8rkd7jfr9o5g6g2pf58cieu.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.128604759297-gtvbuf5qsjnoim10nrknv4iphvtcistt</string>
+	<string>com.googleusercontent.apps.128604759297-28vb88b6a8rkd7jfr9o5g6g2pf58cieu</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAR_Iigew68csXRHN6w_Dlu1nDOGmwCW6Q</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>coven.jaspesoft.com</string>
+	<string>covendolar.jaspesoft.com</string>
 	<key>PROJECT_ID</key>
 	<string>coven-jaspesoft-com</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:128604759297:ios:bdf80c73b280db834b2700</string>
+	<string>1:128604759297:ios:e90bbf970840b46d4b2700</string>
 	<key>DATABASE_URL</key>
 	<string>https://coven-jaspesoft-com.firebaseio.com</string>
 </dict>
