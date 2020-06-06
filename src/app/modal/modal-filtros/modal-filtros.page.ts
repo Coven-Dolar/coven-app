@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RequestAPI} from '../../services/RequestAPI';
-import {ModalController} from '@ionic/angular';
+import {PopoverController} from '@ionic/angular';
 import {Router} from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class ModalFiltrosPage implements OnInit {
   categorias = [];
   constructor(
       private http: RequestAPI,
-      private modal: ModalController,
+      private modal: PopoverController,
       private route: Router
   ) { }
 

@@ -1,7 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {formatDate} from '@angular/common';
-import {Events, ModalController} from '@ionic/angular';
 import {ModalFiltrosPage} from '../../modal/modal-filtros/modal-filtros.page';
+import {Events} from '../../services/events';
+import {PopoverController} from '@ionic/angular';
 
 @Component({
   selector: 'app-header',
@@ -12,8 +13,9 @@ export class HeaderComponent implements OnInit {
   @Input() showFilter = false;
   today = new Date();
   jstoday: string;
+
   constructor(
-      private modal: ModalController,
+      private modal: PopoverController,
       private event: Events,
   ) { }
 
@@ -27,7 +29,7 @@ export class HeaderComponent implements OnInit {
       cssClass: 'modal-filter'
     });
     modal.onDidDismiss().then(() => {
-          this.event.publish('post:filter');
+      this.event.publish('post:filter', '');
     });
     return await modal.present();
 
