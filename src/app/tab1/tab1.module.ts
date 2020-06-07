@@ -14,6 +14,6 @@ import {SharedModule} from '../components/shared/shared.module';
         RouterModule.forChild([{path: '', component: Tab1Page}]),
         SharedModule
     ],
-  declarations: [Tab1Page]
+    declarations: [Tab1Page]
 })
 export class Tab1PageModule {}

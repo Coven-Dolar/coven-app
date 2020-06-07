@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab2Page } from './tab2.page';
 import {SharedModule} from '../components/shared/shared.module';
+import {Tab1PageModule} from '../tab1/tab1.module';
 
 @NgModule({
     imports: [
@@ -12,7 +13,7 @@ import {SharedModule} from '../components/shared/shared.module';
         CommonModule,
         FormsModule,
         RouterModule.forChild([{path: '', component: Tab2Page}]),
-        SharedModule
+        SharedModule,
     ],
   declarations: [Tab2Page]
 })
