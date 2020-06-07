@@ -68,7 +68,7 @@ export class Tab3Page {
 
   makeRefresh() {
     this.noticias = [];
-    this.offset = 10;
+    this.offset = 0;
     this.makeRequest();
   }
 
