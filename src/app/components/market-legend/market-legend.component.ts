@@ -15,12 +15,10 @@ export class MarketLegendComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.market);
     this.legend = [];
     this.http.get('indicadores/mercados/leyenda/' + this.market  + '/').subscribe( (response: any) => {
       this.legend = response;
-      console.log(this.market);
-      console.log(response);
+
 
     });
   }

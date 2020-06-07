@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  URL_API: 'http://127.0.0.1:8000/api/v1/',
-  API_TOKEN: 'fd86b47d7f457e13c8ba9f2ef65873e88dadde84',
+  URL_API: "https://coven.jaspesoft.com/api/v1/",
+  API_TOKEN: "a4b3e32b1f31d45595cb46c9cc4334c537ab9d60",
 };
 
 /*
