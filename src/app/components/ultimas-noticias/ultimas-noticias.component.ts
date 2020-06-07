@@ -21,7 +21,7 @@ export class UltimasNoticiasComponent implements OnInit {
 
   ngOnInit() {
     this.request = true;
-    this.http.get('blog/post/').subscribe( (response: any) => {
+    this.http.get('blog/post/recent/').subscribe( (response: any) => {
       this.noticias = response.results;
       this.request = false;
     });

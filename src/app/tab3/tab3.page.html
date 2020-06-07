@@ -1,7 +1,7 @@
 <app-header [showFilter]="true" (execRefresh)="makeRefresh()"></app-header>
 <ion-content>
 
-    <ion-card *ngFor="let noticia of noticias">
+    <ion-card class="ion-no-margin" *ngFor="let noticia of noticias">
         <ion-card-header class="ion-no-padding">
             <ion-card-title>{{noticia.titulo}}</ion-card-title>
             <small>{{noticia.fecha_creacion | date: 'medium'}}</small>
@@ -12,7 +12,7 @@
             </ion-col>
             <ion-col size="8">
                 <ion-card-content class="ion-no-padding">
-                    {{noticia.resumen | slice:0:185}}...
+                    {{noticia.resumen | slice:0:146}}...
                 </ion-card-content>
                 <ion-row class="ion-justify-content-end">
                     <ion-col size="9">

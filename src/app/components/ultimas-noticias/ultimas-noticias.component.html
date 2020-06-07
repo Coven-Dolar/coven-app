@@ -10,8 +10,8 @@
   </ion-row>
   <div *ngIf="!request">
     <ion-slides pager="true" [options]="slideOpts" #SliderProdutos>
-      <ion-slide class="padding" *ngFor="let noticia of noticias">
-        <ion-card class="ion-no-margin">
+      <ion-slide  *ngFor="let noticia of noticias">
+        <ion-card class="ion-no-margin padding">
           <ion-card-header class="ion-no-padding">
             <ion-card-title>{{noticia.titulo}}</ion-card-title>
           </ion-card-header>
