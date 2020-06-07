@@ -16,6 +16,10 @@ export class NoticiaPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.makeRequest();
+  }
+
+  private makeRequest(): void {
     const url = this.activatedRoute.snapshot.paramMap.get('url');
     this.request = true;
     this.http.get('blog/post/' + url).subscribe( (response: any) => {
@@ -23,7 +27,8 @@ export class NoticiaPage implements OnInit {
       this.request = false;
     });
   }
-  ionViewDidEnter() {
-    console.log('xxx');
+
+  makeRefresh() {
+    this.makeRequest();
   }
 }
