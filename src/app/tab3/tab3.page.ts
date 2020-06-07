@@ -17,6 +17,14 @@ export class Tab3Page {
   ) { }
 
   async ionViewDidEnter() {
+    this.makeRequest();
+  }
+
+  abrirNoticia(url: string) {
+    this.route.navigate(['/tabs/tab3/noticia', url]);
+  }
+
+  private makeRequest(): void {
     this.request = true;
     let url = this.activatedRoute.snapshot.paramMap.get('categoria');
     if (url !== null) {
@@ -30,8 +38,8 @@ export class Tab3Page {
     });
   }
 
-  abrirNoticia(url: string) {
-    this.route.navigate(['/tabs/tab3/noticia', url]);
+  makeRefresh() {
+    this.makeRequest();
   }
 
 }

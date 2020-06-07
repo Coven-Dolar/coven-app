@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {formatDate} from '@angular/common';
 import {ModalFiltrosPage} from '../../modal/modal-filtros/modal-filtros.page';
 import {Events} from '../../services/events';
@@ -11,6 +11,7 @@ import {PopoverController} from '@ionic/angular';
 })
 export class HeaderComponent implements OnInit {
   @Input() showFilter = false;
+  @Output() execRefresh = new EventEmitter();
   today = new Date();
   jstoday: string;
 
@@ -33,6 +34,10 @@ export class HeaderComponent implements OnInit {
     });
     return await modal.present();
 
+  }
+
+  makeRefresh() {
+    this.execRefresh.emit();
   }
 
 }

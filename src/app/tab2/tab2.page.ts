@@ -19,11 +19,19 @@ export class Tab2Page {
   }
 
   async ionViewDidEnter() {
+    this.makeRequest();
+  }
+
+  private makeRequest(): void {
     this.request = true;
     this.http.get('indicadores/mercados/nacionales/').subscribe( (response: any) => {
       this.datos = response;
       this.request = false;
     });
+  }
+
+  refreshMarket() {
+    this.makeRequest();
   }
 
 }
