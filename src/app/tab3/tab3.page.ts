@@ -33,7 +33,7 @@ export class Tab3Page {
 
   private makeRequest(): void {
     let url = this.activatedRoute.snapshot.paramMap.get('categoria');
-    if (url !== null) {
+    if (url !== null && url !== '') {
       url = 'blog/post/' + 'category/' + url + '/';
     } else {
       url = 'blog/post/';
