@@ -74,6 +74,7 @@ ion-tab-button:focus {
 }
 
 .name-commoditie {
+  text-decoration: underline;
   font-family: FontTitulo;
 }
 .positivo, .negativo, .default {
@@ -125,4 +126,16 @@ ion-card {
 
 ion-content {
   --background: url(assets/images/bg.jpg) no-repeat center center / cover;
+}
+
+.item-market {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+.item-market > ion-card-header {
+  padding: 0;
+}
+.item-market > .card-content-ios, .item-market > .card-content-md {
+  padding-bottom: 0;
 }

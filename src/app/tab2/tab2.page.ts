@@ -7,15 +7,29 @@ import {RequestAPI} from '../services/RequestAPI';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-  request: boolean;
-  datos = [];
-  today = new Date();
+  public request: boolean;
+  public datos = [];
+  public today = new Date();
+  public items: any = [];
+
   constructor(
       private http: RequestAPI
   ) {
     setInterval( () => {
       this.today = new Date();
     }, 1000);
+
+    this.items = [
+      { expanded: false },
+      { expanded: false },
+      { expanded: false },
+      { expanded: false },
+      { expanded: false },
+      { expanded: false },
+      { expanded: false },
+      { expanded: false },
+      { expanded: false }
+    ];
   }
 
   async ionViewDidEnter() {
@@ -26,12 +40,30 @@ export class Tab2Page {
     this.request = true;
     this.http.get('indicadores/mercados/nacionales/').subscribe( (response: any) => {
       this.datos = response;
+      for (const item of this.datos) {
+        item['expanded'] = false;
+      }
       this.request = false;
     });
   }
 
   refreshMarket() {
     this.makeRequest();
+  }
+
+  expandItem(item): void {
+    if (item.expanded) {
+      item.expanded = false;
+    } else {
+      this.datos.map( (listItem: any) => {
+        if (item == listItem) {
+          listItem.expanded = !listItem.expanded;
+        } else {
+          listItem.expanded = false;
+        }
+        return listItem;
+      });
+    }
   }
 
 }
