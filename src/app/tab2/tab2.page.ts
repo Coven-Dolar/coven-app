@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import {RequestAPI} from '../services/RequestAPI';
+import {GraphComponent} from '../components/graph/graph.component';
 
 @Component({
   selector: 'app-tab2',
@@ -10,7 +11,19 @@ export class Tab2Page {
   public request: boolean;
   public datos = [];
   public today = new Date();
-  public items: any = [];
+  public dataGraph = [
+    ['10-12 05:50', 'Histórico'],
+    ['10-12 05:10',     9824],
+    ['10-12 05:30',      9910],
+    ['10-12 05:40',  9924],
+    ['10-12 05:50', 9894],
+    ['10-13 06:00',    9884],
+    ['10-13 05:10',     9824],
+    ['10-13 05:30',      9910],
+    ['10-13 05:40',  9924],
+    ['10-13 05:50', 9894],
+    ['10-1· 06:00',    9884]
+  ];
 
   constructor(
       private http: RequestAPI
@@ -18,18 +31,6 @@ export class Tab2Page {
     setInterval( () => {
       this.today = new Date();
     }, 1000);
-
-    this.items = [
-      { expanded: false },
-      { expanded: false },
-      { expanded: false },
-      { expanded: false },
-      { expanded: false },
-      { expanded: false },
-      { expanded: false },
-      { expanded: false },
-      { expanded: false }
-    ];
   }
 
   async ionViewDidEnter() {
@@ -55,6 +56,7 @@ export class Tab2Page {
     if (item.expanded) {
       item.expanded = false;
     } else {
+      this.searDataGraph(item.nombre);
       this.datos.map( (listItem: any) => {
         if (item == listItem) {
           listItem.expanded = !listItem.expanded;
@@ -64,6 +66,12 @@ export class Tab2Page {
         return listItem;
       });
     }
+  }
+
+  private searDataGraph(market: string) {
+      this.http.get('indicadores/data/nacional/' + market, {days: 7}).subscribe( (response: any) => {
+
+    });
   }
 
 }
