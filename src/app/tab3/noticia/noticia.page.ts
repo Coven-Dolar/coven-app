@@ -8,8 +8,10 @@ import {RequestAPI} from '../../services/RequestAPI';
   styleUrls: ['./noticia.page.scss'],
 })
 export class NoticiaPage implements OnInit {
-  noticia: any;
-  request: boolean;
+  public noticia: any;
+  public request: boolean;
+  private previousUrl: string;
+
   constructor(
       private activatedRoute: ActivatedRoute,
       private http: RequestAPI,
@@ -31,4 +33,5 @@ export class NoticiaPage implements OnInit {
   makeRefresh() {
     this.makeRequest();
   }
+
 }

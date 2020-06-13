@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {formatDate} from '@angular/common';
 import {ModalFiltrosPage} from '../../modal/modal-filtros/modal-filtros.page';
 import {Events} from '../../services/events';
-import {PopoverController} from '@ionic/angular';
+import {NavController, PopoverController} from '@ionic/angular';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +11,7 @@ import {PopoverController} from '@ionic/angular';
 })
 export class HeaderComponent implements OnInit {
   @Input() showFilter = false;
+  @Input() showGoBack = false;
   @Output() execRefresh = new EventEmitter();
   today = new Date();
   jstoday: string;
@@ -18,6 +19,7 @@ export class HeaderComponent implements OnInit {
   constructor(
       private modal: PopoverController,
       private event: Events,
+      private navCtrl: NavController,
   ) { }
 
   ngOnInit() {
@@ -38,6 +40,10 @@ export class HeaderComponent implements OnInit {
 
   makeRefresh() {
     this.execRefresh.emit();
+  }
+
+  goBack() {
+    this.navCtrl.back();
   }
 
 }

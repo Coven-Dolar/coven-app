@@ -1,4 +1,4 @@
-<app-header (execRefresh)="makeRefresh()"></app-header>
+<app-header (execRefresh)="makeRefresh()" [showGoBack]="true"></app-header>
 
 <ion-content>
     <ion-row *ngIf="request" class="ion-justify-content-center">
@@ -9,7 +9,7 @@
             </ion-row>
         </ion-col>
     </ion-row>
-    <ion-card class="ion-no-margin" *ngIf="!request">
+    <ion-card class="ion-no-margin noticia" *ngIf="!request">
         <ion-card-header class="ion-no-padding">
             <ion-card-title>{{noticia.titulo}}</ion-card-title>
             <small>{{noticia.fecha_creacion | date: 'medium'}}</small>

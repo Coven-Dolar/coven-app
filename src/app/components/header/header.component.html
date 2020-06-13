@@ -1,7 +1,10 @@
 <ion-grid>
   <ion-toolbar>
     <ion-row>
-      <ion-col size="5">
+      <ion-col size="1" *ngIf="showGoBack" class="ion-no-padding" (click)="goBack()">
+        <ion-icon name="chevron-back-outline" style="font-size: 20pt; color: white"></ion-icon>
+      </ion-col>
+      <ion-col size="4">
         <img src="../assets/images/logo.svg">
       </ion-col>
       <ion-col size="3" *ngIf="showFilter"></ion-col>

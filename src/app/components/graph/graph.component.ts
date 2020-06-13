@@ -93,7 +93,7 @@ export class GraphComponent implements OnInit {
   }
 
   private searDataGraph() {
-    this.http.get('indicadores/data/' + this.typeMarket + '/' + this.market, {days: this.selectedDay}).subscribe( (response: any) => {
+    this.http.get('indicadores/data/' + this.typeMarket + '/' + this.market + '/', {days: this.selectedDay}).subscribe( (response: any) => {
       const array = [];
       if (response.length > 1) {
         for (const item of response) {
