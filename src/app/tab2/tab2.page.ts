@@ -1,6 +1,7 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
 import {RequestAPI} from '../services/RequestAPI';
 import {GraphComponent} from '../components/graph/graph.component';
+import {Events} from '../services/events';
 
 @Component({
   selector: 'app-tab2',
@@ -8,25 +9,15 @@ import {GraphComponent} from '../components/graph/graph.component';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  // @ts-ignore
+  @ViewChild(GraphComponent) Graph: GraphComponent;
   public request: boolean;
   public datos = [];
   public today = new Date();
-  public dataGraph = [
-    ['10-12 05:50', 'Histórico'],
-    ['10-12 05:10',     9824],
-    ['10-12 05:30',      9910],
-    ['10-12 05:40',  9924],
-    ['10-12 05:50', 9894],
-    ['10-13 06:00',    9884],
-    ['10-13 05:10',     9824],
-    ['10-13 05:30',      9910],
-    ['10-13 05:40',  9924],
-    ['10-13 05:50', 9894],
-    ['10-1· 06:00',    9884]
-  ];
 
   constructor(
-      private http: RequestAPI
+      private http: RequestAPI,
+      private event: Events,
   ) {
     setInterval( () => {
       this.today = new Date();
@@ -43,6 +34,7 @@ export class Tab2Page {
       this.datos = response;
       for (const item of this.datos) {
         item['expanded'] = false;
+        break;
       }
       this.request = false;
     });
@@ -56,7 +48,7 @@ export class Tab2Page {
     if (item.expanded) {
       item.expanded = false;
     } else {
-      this.searDataGraph(item.nombre);
+      this.event.publish(item.nombre, '');
       this.datos.map( (listItem: any) => {
         if (item == listItem) {
           listItem.expanded = !listItem.expanded;
@@ -68,10 +60,5 @@ export class Tab2Page {
     }
   }
 
-  private searDataGraph(market: string) {
-      this.http.get('indicadores/data/nacional/' + market, {days: 7}).subscribe( (response: any) => {
-
-    });
-  }
 
 }

@@ -3,9 +3,17 @@
 
         <ion-item lines="none" class="ion-no-padding">
             <small>{{entry.val}}</small>
-            <ion-checkbox class="ion-no-margin check" color="primary" slot="start" [(ngModel)]="entry.isChecked" (click)="setSelectOtion(entry.val)"></ion-checkbox>
+            <ion-checkbox class="ion-no-margin check" color="primary" slot="start" [(ngModel)]="entry.isChecked" (click)="setSelectOption(entry.val)"></ion-checkbox>
         </ion-item>
     </ion-col>
 </ion-row>
 
-<google-chart [data]="pieChart"></google-chart>
+<ion-row *ngIf="!showGraph" class="ion-justify-content-center">
+    <ion-col size="6" class="ion-align-items-center">
+        <ion-row class=" ion-no-margin">
+            <ion-spinner></ion-spinner>
+            <small>Cargando datos...</small>
+        </ion-row>
+    </ion-col>
+</ion-row>
+<google-chart [data]="lineChart" *ngIf="showGraph"></google-chart>
