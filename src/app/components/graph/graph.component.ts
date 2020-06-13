@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {GoogleChartInterface} from 'ng2-google-charts';
 
 @Component({
@@ -7,26 +7,41 @@ import {GoogleChartInterface} from 'ng2-google-charts';
   styleUrls: ['./graph.component.scss'],
 })
 export class GraphComponent implements OnInit {
+  @Input() dataGraph = [];
+  public options: any;
+  public selectOption: string;
+
   public pieChart: GoogleChartInterface = {
     chartType: 'LineChart',
-    dataTable: [
-      ['10-12 05:50', 'Histórico'],
-      ['10-12 05:10',     9824],
-      ['10-12 05:30',      9910],
-      ['10-12 05:40',  9924],
-      ['10-12 05:50', 9894],
-      ['10-13 06:00',    9884],
-      ['10-13 05:10',     9824],
-      ['10-13 05:30',      9910],
-      ['10-13 05:40',  9924],
-      ['10-13 05:50', 9894],
-      ['10-1· 06:00',    9884]
-    ],
     //firstRowIsData: true,
     options: {title: 'Un grafico de ejemplo'},
   };
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.options = [
+      { val: '7 Días', isChecked: true },
+      { val: '15 Días', isChecked: false },
+      { val: '1 Mes', isChecked: false },
+      { val: '6 Meses', isChecked: false },
+    ];
+    this.pieChart.dataTable = this.dataGraph;
+  }
+
+  setSelectOtion(selecao) {
+    const novoOpcoes = this.options;
+
+    for (const key in novoOpcoes) {
+      if (novoOpcoes.hasOwnProperty(key)) {
+        const element = novoOpcoes[key];
+        if (element.val === selecao) {
+          novoOpcoes[key] = {val: element.val, isChecked: true};
+        } else {
+          novoOpcoes[key] = {val: element.val, isChecked: false};
+        }
+      }
+    }
+    this.options = novoOpcoes;
+  }
 
 }
