@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {RequestAPI} from '../services/RequestAPI';
+import {Events} from '../services/events';
 
 @Component({
   selector: 'app-tab1',
@@ -11,7 +12,8 @@ export class Tab1Page {
   request: boolean;
   today = new Date();
   constructor(
-      private http: RequestAPI
+      private http: RequestAPI,
+      private event: Events,
   ) {
     setInterval( () => {
       this.today = new Date();
@@ -32,6 +34,22 @@ export class Tab1Page {
 
   refreshMarket() {
     this.makeRequest();
+  }
+
+  expandItem(item): void {
+    if (item.expanded) {
+      item.expanded = false;
+    } else {
+      this.event.publish(item.nombre, '');
+      this.datos.map( (listItem: any) => {
+        if (item == listItem) {
+          listItem.expanded = !listItem.expanded;
+        } else {
+          listItem.expanded = false;
+        }
+        return listItem;
+      });
+    }
   }
 
 }
