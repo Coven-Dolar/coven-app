@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:coven/News/ui/screen/news_list_screen.dart';
+import 'package:coven_native/News/ui/screen/news_list_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

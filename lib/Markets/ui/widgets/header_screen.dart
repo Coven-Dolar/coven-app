@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:coven/uitls/app_colors.dart';
-import 'package:coven/uitls/app_fonts.dart';
+import 'package:coven_native/uitls/app_colors.dart';
+import 'package:coven_native/uitls/app_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';

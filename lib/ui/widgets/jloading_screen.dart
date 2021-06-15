@@ -1,4 +1,4 @@
-import 'package:coven/uitls/app_fonts.dart';
+import 'package:coven_native/uitls/app_fonts.dart';
 import 'package:flutter/material.dart';
 
 class JLoadingScreen extends StatelessWidget {

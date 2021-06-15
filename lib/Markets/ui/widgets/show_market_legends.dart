@@ -1,8 +1,8 @@
-import 'package:coven/Markets/bloc/bloc_market.dart';
-import 'package:coven/Markets/model_legends.dart';
-import 'package:coven/ui/widgets/jloading_screen.dart';
-import 'package:coven/uitls/app_colors.dart';
-import 'package:coven/uitls/app_fonts.dart';
+import 'package:coven_native/Markets/bloc/bloc_market.dart';
+import 'package:coven_native/Markets/model_legends.dart';
+import 'package:coven_native/ui/widgets/jloading_screen.dart';
+import 'package:coven_native/uitls/app_colors.dart';
+import 'package:coven_native/uitls/app_fonts.dart';
 import 'package:flutter/material.dart';
 
 class ShowMarketLegends extends StatefulWidget {

@@ -1,5 +1,5 @@
-import 'package:coven/uitls/app_colors.dart';
-import 'package:coven/uitls/app_fonts.dart';
+import 'package:coven_native/uitls/app_colors.dart';
+import 'package:coven_native/uitls/app_fonts.dart';
 import 'package:flutter/cupertino.dart';
 
 class TitleSection extends StatelessWidget {

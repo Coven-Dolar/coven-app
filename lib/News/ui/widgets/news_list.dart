@@ -1,5 +1,5 @@
-import 'package:coven/News/ui/screen/detail_news.dart';
-import 'package:coven/uitls/app_fonts.dart';
+import 'package:coven_native/News/ui/screen/detail_news.dart';
+import 'package:coven_native/uitls/app_fonts.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_grid/simple_grid.dart';
