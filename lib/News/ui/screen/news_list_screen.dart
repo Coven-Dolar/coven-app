@@ -1,13 +1,13 @@
-import 'package:coven/News/bloc/bloc_news.dart';
-import 'package:coven/News/ui/widgets/carousel_news.dart';
-import 'package:coven/News/ui/widgets/menu_news_category.dart';
-import 'package:coven/News/ui/widgets/news_list.dart';
-import 'package:coven/News/ui/widgets/title_section.dart';
-import 'package:coven/ui/widgets/backgroud.dart';
-import 'package:coven/ui/widgets/bottom_navigation.dart';
-import 'package:coven/ui/widgets/jloading_screen.dart';
-import 'package:coven/uitls/app_colors.dart';
-import 'package:coven/uitls/app_fonts.dart';
+import 'package:coven_native/News/bloc/bloc_news.dart';
+import 'package:coven_native/News/ui/widgets/carousel_news.dart';
+import 'package:coven_native/News/ui/widgets/menu_news_category.dart';
+import 'package:coven_native/News/ui/widgets/news_list.dart';
+import 'package:coven_native/News/ui/widgets/title_section.dart';
+import 'package:coven_native/ui/widgets/backgroud.dart';
+import 'package:coven_native/ui/widgets/bottom_navigation.dart';
+import 'package:coven_native/ui/widgets/jloading_screen.dart';
+import 'package:coven_native/uitls/app_colors.dart';
+import 'package:coven_native/uitls/app_fonts.dart';
 import 'package:flutter/material.dart';
 
 import '../../model_news.dart';

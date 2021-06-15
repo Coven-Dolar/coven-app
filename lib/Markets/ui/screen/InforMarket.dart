@@ -1,13 +1,13 @@
-import 'package:coven/Markets/bloc/bloc_market.dart';
-import 'package:coven/Markets/ui/widgets/header_screen.dart';
-import 'package:coven/Markets/ui/widgets/show_info_markets.dart';
-import 'package:coven/Markets/ui/widgets/show_market_legends.dart';
-import 'package:coven/News/bloc/bloc_news.dart';
-import 'package:coven/News/model_news.dart';
-import 'package:coven/News/ui/widgets/carousel_news.dart';
-import 'package:coven/ui/widgets/backgroud.dart';
-import 'package:coven/ui/widgets/bottom_navigation.dart';
-import 'package:coven/ui/widgets/jloading_screen.dart';
+import 'package:coven_native/Markets/bloc/bloc_market.dart';
+import 'package:coven_native/Markets/ui/widgets/header_screen.dart';
+import 'package:coven_native/Markets/ui/widgets/show_info_markets.dart';
+import 'package:coven_native/Markets/ui/widgets/show_market_legends.dart';
+import 'package:coven_native/News/bloc/bloc_news.dart';
+import 'package:coven_native/News/model_news.dart';
+import 'package:coven_native/News/ui/widgets/carousel_news.dart';
+import 'package:coven_native/ui/widgets/backgroud.dart';
+import 'package:coven_native/ui/widgets/bottom_navigation.dart';
+import 'package:coven_native/ui/widgets/jloading_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../model_market.dart';

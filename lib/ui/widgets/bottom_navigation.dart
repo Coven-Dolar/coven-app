@@ -1,6 +1,6 @@
-import 'package:coven/Markets/ui/screen/InforMarket.dart';
-import 'package:coven/News/ui/screen/news_list_screen.dart';
-import 'package:coven/uitls/app_colors.dart';
+import 'package:coven_native/Markets/ui/screen/InforMarket.dart';
+import 'package:coven_native/News/ui/screen/news_list_screen.dart';
+import 'package:coven_native/uitls/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

@@ -1,6 +1,6 @@
-import 'package:coven/News/model_news.dart';
-import 'package:coven/News/model_category.dart';
-import 'package:coven/News/repository_news.dart';
+import 'package:coven_native/News/model_news.dart';
+import 'package:coven_native/News/model_category.dart';
+import 'package:coven_native/News/repository_news.dart';
 
 class BlocNews {
   final RepositoryNews repository = RepositoryNews();

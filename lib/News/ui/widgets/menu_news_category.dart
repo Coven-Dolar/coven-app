@@ -1,9 +1,9 @@
-import 'package:coven/News/bloc/bloc_news.dart';
-import 'package:coven/News/model_category.dart';
-import 'package:coven/News/ui/screen/news_list_screen.dart';
-import 'package:coven/ui/widgets/jloading_screen.dart';
-import 'package:coven/uitls/app_colors.dart';
-import 'package:coven/uitls/app_fonts.dart';
+import 'package:coven_native/News/bloc/bloc_news.dart';
+import 'package:coven_native/News/model_category.dart';
+import 'package:coven_native/News/ui/screen/news_list_screen.dart';
+import 'package:coven_native/ui/widgets/jloading_screen.dart';
+import 'package:coven_native/uitls/app_colors.dart';
+import 'package:coven_native/uitls/app_fonts.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';

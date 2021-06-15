@@ -1,4 +1,4 @@
-# coven
+# coven_native
 
 A new Flutter project.
 
