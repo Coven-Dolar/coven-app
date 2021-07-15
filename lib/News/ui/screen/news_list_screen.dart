@@ -8,6 +8,7 @@ import 'package:coven_native/ui/widgets/bottom_navigation.dart';
 import 'package:coven_native/ui/widgets/jloading_screen.dart';
 import 'package:coven_native/uitls/app_colors.dart';
 import 'package:coven_native/uitls/app_fonts.dart';
+import 'package:coven_native/uitls/firebase_fcm.dart';
 import 'package:flutter/material.dart';
 
 import '../../model_news.dart';
@@ -72,6 +73,9 @@ class _NewsListScreen extends State<NewsListScreen> {
                           ? blocNews.getAllNews()
                           : blocNews.getNewsForCategory(widget.categoryUrl),
                       builder: (context, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.waiting) {
+                          FirebaseFCM().registerTokenFCM();
+                        }
                         if (snapshot.connectionState == ConnectionState.done &&
                             snapshot.data != null) {
                           List<ModelNews> newsList =
