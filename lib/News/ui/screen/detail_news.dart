@@ -33,15 +33,6 @@ class _DetailNews extends State<DetailNews> {
           leading: IconButton(
             icon: Icon(Icons.arrow_back),
             onPressed: () => Navigator.of(context).pop(),
-            // onPressed: () {
-            //   Navigator.push(
-            //     context,
-            //     MaterialPageRoute(
-            //         builder: (context) => NewsListScreen(
-            //               categoryUrl: widget.news.categoria,
-            //             )),
-            //   );
-            // },
           )),
       body: Stack(
         children: [Background(), _showNews(widget.news)],
