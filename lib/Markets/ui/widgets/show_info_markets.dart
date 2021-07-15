@@ -38,7 +38,7 @@ class _ShowInfoMarkets extends State<ShowInfoMarkets> {
               TableRow(children: [
                 TableCell(
                     child: Container(
-                  margin: EdgeInsets.all(10),
+                  margin: EdgeInsets.only(top: 6, bottom: 4),
                   child: Text(
                     "",
                     style: TextStyle(
@@ -50,7 +50,7 @@ class _ShowInfoMarkets extends State<ShowInfoMarkets> {
                 )),
                 TableCell(
                     child: Container(
-                  margin: EdgeInsets.all(10),
+                  margin: EdgeInsets.only(top: 6, bottom: 4),
                   child: Text(
                     "Mercados",
                     style: TextStyle(
@@ -62,7 +62,7 @@ class _ShowInfoMarkets extends State<ShowInfoMarkets> {
                 )),
                 TableCell(
                     child: Container(
-                  margin: EdgeInsets.all(10),
+                  margin: EdgeInsets.only(top: 6, bottom: 4),
                   child: Text(
                     "Cotización",
                     textAlign: TextAlign.center,
@@ -75,7 +75,7 @@ class _ShowInfoMarkets extends State<ShowInfoMarkets> {
                 )),
                 TableCell(
                     child: Container(
-                  margin: EdgeInsets.all(10),
+                  margin: EdgeInsets.only(top: 6, bottom: 4),
                   child: Text(
                     "",
                     style: TextStyle(
@@ -87,7 +87,7 @@ class _ShowInfoMarkets extends State<ShowInfoMarkets> {
                 )),
                 TableCell(
                     child: Container(
-                  margin: EdgeInsets.all(10),
+                      margin: EdgeInsets.only(top: 6, bottom: 4),
                   child: GestureDetector(
                     onTap: widget.onTab,
                     child: Icon(
@@ -131,7 +131,7 @@ class _ShowInfoMarkets extends State<ShowInfoMarkets> {
           market.nombre,
           style: TextStyle(
               fontFamily: AppFonts.fontTitle,
-              fontSize: 12,
+              fontSize: 11,
               color: AppColors.gayDark),
         ),
       )),

@@ -70,7 +70,7 @@ class _InfoMarket extends State<InfoMarket> {
             ),
             SingleChildScrollView(
               child: Container(
-                padding: EdgeInsets.only(top: 121),
+                padding: EdgeInsets.only(top: 128),
                 child: _showInfoMarket(),
               ),
             )

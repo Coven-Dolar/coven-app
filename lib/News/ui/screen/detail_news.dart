@@ -32,15 +32,16 @@ class _DetailNews extends State<DetailNews> {
           backgroundColor: AppColors.blue,
           leading: IconButton(
             icon: Icon(Icons.arrow_back),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => NewsListScreen(
-                          categoryUrl: widget.news.categoria,
-                        )),
-              );
-            },
+            onPressed: () => Navigator.of(context).pop(),
+            // onPressed: () {
+            //   Navigator.push(
+            //     context,
+            //     MaterialPageRoute(
+            //         builder: (context) => NewsListScreen(
+            //               categoryUrl: widget.news.categoria,
+            //             )),
+            //   );
+            // },
           )),
       body: Stack(
         children: [Background(), _showNews(widget.news)],

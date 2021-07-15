@@ -46,7 +46,7 @@ class _NewsListScreen extends State<NewsListScreen> {
                 ? 'NOTÍCIAS DE ' + widget.categoryName.toUpperCase()
                 : 'NOTÍCIAS GENERALES',
             textAlign: TextAlign.left,
-            style: TextStyle(fontSize: 16, fontFamily: AppFonts.fontTitle),
+            style: TextStyle(fontSize: 14, fontFamily: AppFonts.fontTitle),
           ),
           leading: (widget.categoryName.length > 0)
               ? IconButton(

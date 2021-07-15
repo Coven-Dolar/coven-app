@@ -45,8 +45,8 @@ class _HeaderScreen extends State<HeaderScreen> {
       children: [
         Container(
           width: double.infinity,
-          height: 85,
-          padding: EdgeInsets.only(top: 40),
+          height: 95,
+          padding: EdgeInsets.only(top: 50),
           decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
@@ -71,13 +71,16 @@ class _HeaderScreen extends State<HeaderScreen> {
                     ),
                     Expanded(
                         flex: 4,
-                        child: Text(
-                          widget.market,
-                          textAlign: TextAlign.end,
-                          style: TextStyle(
-                              fontFamily: AppFonts.fontTitle,
-                              fontSize: 16,
-                              color: Colors.white),
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 6),
+                          child: Text(
+                            widget.market,
+                            textAlign: TextAlign.end,
+                            style: TextStyle(
+                                fontFamily: AppFonts.fontTitle,
+                                fontSize: 12,
+                                color: Colors.white),
+                          ),
                         ))
                   ],
                 ),
@@ -95,14 +98,18 @@ class _HeaderScreen extends State<HeaderScreen> {
                   child: Text(
                     "Cotización de mercados",
                     textAlign: TextAlign.left,
-                    style: TextStyle(color: Colors.white, fontFamily: AppFonts.fontSubTitle),
+                    style: TextStyle(
+                      fontSize: 12,
+                        color: Colors.white, fontFamily: AppFonts.fontSubTitle),
                   )),
               Expanded(
                 flex: 2,
                 child: Text(
                   _timeString,
                   textAlign: TextAlign.end,
-                  style: TextStyle(color: Colors.white, fontFamily: AppFonts.fontSubTitle),
+                  style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.white, fontFamily: AppFonts.fontSubTitle),
                 ),
               )
             ],
