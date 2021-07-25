@@ -1,5 +1,5 @@
-import '../model_legends.dart';
-import '../model_market.dart';
+import '../models/model_legends.dart';
+import '../models/model_market.dart';
 import '../respository_market.dart';
 
 class BlocMarket {

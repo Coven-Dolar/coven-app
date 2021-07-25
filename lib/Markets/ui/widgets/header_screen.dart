@@ -45,8 +45,8 @@ class _HeaderScreen extends State<HeaderScreen> {
       children: [
         Container(
           width: double.infinity,
-          height: 95,
-          padding: EdgeInsets.only(top: 50),
+          height: 100,
+          padding: EdgeInsets.only(top: 60),
           decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [

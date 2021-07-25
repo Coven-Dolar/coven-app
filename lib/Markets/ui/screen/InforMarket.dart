@@ -10,7 +10,7 @@ import 'package:coven_native/ui/widgets/bottom_navigation.dart';
 import 'package:coven_native/ui/widgets/jloading_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../../model_market.dart';
+import '../../models/model_market.dart';
 
 class InfoMarket extends StatefulWidget {
   final String marketType;
@@ -70,7 +70,7 @@ class _InfoMarket extends State<InfoMarket> {
             ),
             SingleChildScrollView(
               child: Container(
-                padding: EdgeInsets.only(top: 128),
+                padding: EdgeInsets.only(top: 132),
                 child: _showInfoMarket(),
               ),
             )
