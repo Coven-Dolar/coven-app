@@ -18,8 +18,8 @@ abstract class AppHttp {
     return dotenv.env['API_TOKEN'].toString();
   }
 
-  Future<String> getUrlApi() async {
+  Future<String> getUrlApi([apiVersion='v1']) async {
     await dotenv.load();
-    return dotenv.env['API_SERVER'].toString();
+    return dotenv.env['API_SERVER'].toString() + apiVersion + '/';
   }
 }
