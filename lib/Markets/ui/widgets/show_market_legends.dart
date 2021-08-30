@@ -39,7 +39,7 @@ class _ShowMarketLegends extends State<ShowMarketLegends> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: 10),
-      padding: EdgeInsets.all(6),
+      padding: EdgeInsets.all(7),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: listLegends.map((e) => _showLegend(e)).toList(),

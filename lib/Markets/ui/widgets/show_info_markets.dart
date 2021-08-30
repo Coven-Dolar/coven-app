@@ -39,7 +39,7 @@ class _ShowInfoMarkets extends State<ShowInfoMarkets> {
               TableRow(children: [
                 TableCell(
                     child: Container(
-                      margin: EdgeInsets.only(top: 6, bottom: 4),
+                      margin: EdgeInsets.only(top: 10, bottom: 4),
                       child: Text(
                         "",
                         style: TextStyle(
@@ -51,7 +51,7 @@ class _ShowInfoMarkets extends State<ShowInfoMarkets> {
                     )),
                 TableCell(
                     child: Container(
-                      margin: EdgeInsets.only(top: 6, bottom: 4),
+                      margin: EdgeInsets.only(top: 10, bottom: 4),
                       child: Text(
                         "Mercados",
                         style: TextStyle(
@@ -63,7 +63,7 @@ class _ShowInfoMarkets extends State<ShowInfoMarkets> {
                     )),
                 TableCell(
                     child: Container(
-                      margin: EdgeInsets.only(top: 6, bottom: 4),
+                      margin: EdgeInsets.only(top: 10, bottom: 4),
                       child: Text(
                         "Cotización",
                         textAlign: TextAlign.center,
@@ -76,7 +76,7 @@ class _ShowInfoMarkets extends State<ShowInfoMarkets> {
                     )),
                 TableCell(
                     child: Container(
-                      margin: EdgeInsets.only(top: 6, bottom: 4),
+                      margin: EdgeInsets.only(top: 10, bottom: 4),
                       child: Text(
                         "",
                         style: TextStyle(
@@ -88,7 +88,7 @@ class _ShowInfoMarkets extends State<ShowInfoMarkets> {
                     )),
                 TableCell(
                     child: Container(
-                      margin: EdgeInsets.only(top: 6, bottom: 4),
+                      margin: EdgeInsets.only(top: 10, bottom: 4),
                       child: GestureDetector(
                         onTap: widget.onTab,
                         child: Icon(

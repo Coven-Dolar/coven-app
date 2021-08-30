@@ -8,8 +8,6 @@ import 'package:coven_native/uitls/app_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'news_list_screen.dart';
-
 class DetailNews extends StatefulWidget {
   final ModelNews news;
 
@@ -55,7 +53,7 @@ class _DetailNews extends State<DetailNews> {
               style: TextStyle(fontFamily: AppFonts.fontTitle, fontSize: 20),
             ),
             Container(
-              margin: EdgeInsets.only(top: 10),
+                margin: EdgeInsets.only(top: 10),
                 height: 300,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25.0),
@@ -70,7 +68,7 @@ class _DetailNews extends State<DetailNews> {
                   text(formatDate(news.fechaCreacion) + ' - ' + news.categoria),
             ),
             Text(
-                removeAllHtmlTags(news.descripcion),
+              removeAllHtmlTags(news.descripcion),
               textAlign: TextAlign.justify,
               style: TextStyle(fontSize: 15),
             )

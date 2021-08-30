@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:coven_native/News/ui/screen/news_list_screen.dart';
+import 'package:coven_native/uitls/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -27,21 +28,33 @@ class _SplashScreen extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromRGBO(0, 146, 205, 1),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(30),
-                child: Image.asset('assets/images/splash.png', width: 250),
-              ),
-              Center(
-                  child: CircularProgressIndicator(
-                color: Colors.white,
-              ))
-            ],
-          ),
+          child:
+              Container(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        AppColors.blue,
+                        AppColors.blueDart,
+                      ],
+                      begin: FractionalOffset(0.2, 0.0),
+                      end: FractionalOffset(6, 0.6),
+                    )),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(30),
+                      child: Image.asset('assets/images/logo.png', width: 250),
+                    ),
+                    Center(
+                        child: CircularProgressIndicator(
+                          color: Colors.white,
+                        ))
+                  ],
+                ),
+              )
+          ,
         ));
   }
 }

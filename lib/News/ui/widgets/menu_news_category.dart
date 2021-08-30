@@ -28,7 +28,7 @@ class _MenuNewsCategories extends State<MenuNewsCategories> {
             gradient: LinearGradient(
           colors: [
             AppColors.blue,
-            Color.fromRGBO(46, 57, 136, 1),
+            AppColors.blueDart,
           ],
           begin: FractionalOffset(0.2, 0.0),
           end: FractionalOffset(6, 0.6),

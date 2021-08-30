@@ -63,17 +63,17 @@ class _InfoMarket extends State<InfoMarket> {
         body: Stack(
           children: [
             Background(),
+            SingleChildScrollView(
+              child: Container(
+                padding: EdgeInsets.only(top: 142),
+                child: _showInfoMarket(),
+              ),
+            ),
             HeaderScreen(
               market: (widget.marketType == 'I')
                   ? 'Mercados Internacionales'
                   : 'Mercados Nacionales',
             ),
-            SingleChildScrollView(
-              child: Container(
-                padding: EdgeInsets.only(top: 132),
-                child: _showInfoMarket(),
-              ),
-            )
           ],
         ),
         bottomNavigationBar: BottomNavigation(
