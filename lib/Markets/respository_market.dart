@@ -55,17 +55,17 @@ class RepositoryMarket extends AppHttp {
       String market, String typeMarket, String frequency) async {
     Response response;
     Map<String, dynamic> header = await this.getHeader();
+    String url = "${await this.getUrlApi('v2')}indicadores/data/${typeMarket}/${market}/?days=${frequency}";
 
     try {
       response = await http.get(
-          "${await this.getUrlApi('v2')}indicadores/data/${typeMarket}/${market}/?days=${frequency}",
+          url,
           options: Options(headers: header));
       final parsed = response.data.cast<Map<String, dynamic>>();
       return parsed
-          .map<ModelLegends>((json) => ModelHistoryPriceMarket.fromJson(json))
+          .map<ModelHistoryPriceMarket>((json) => ModelHistoryPriceMarket.fromJson(json))
           .toList();
     } on DioError catch (e) {
-      print('errr');
       Map error = e.response!.data;
       error.forEach((key, value) => throw (value));
       print(e);

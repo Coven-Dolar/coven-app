@@ -88,7 +88,9 @@ class _InfoMarket extends State<InfoMarket> {
         (this.dataList.length == 0)
             ? JLoadingScreen()
             : ShowInfoMarkets(
-                dataMarket: dataList, onTab: () => this.processSearch()),
+                marketType: widget.marketType,
+                dataMarket: dataList,
+                onTab: () => this.processSearch()),
         ShowMarketLegends(
           marketType: widget.marketType,
         ),

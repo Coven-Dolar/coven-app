@@ -9,9 +9,13 @@ import '../../models/model_market.dart';
 class ShowInfoMarkets extends StatefulWidget {
   final List<ModelMarket> dataMarket;
   final VoidCallback onTab;
+  final String marketType;
 
   const ShowInfoMarkets(
-      {Key? key, required this.dataMarket, required this.onTab})
+      {Key? key,
+      required this.dataMarket,
+      required this.onTab,
+      required this.marketType})
       : super(key: key);
 
   @override
@@ -39,64 +43,75 @@ class _ShowInfoMarkets extends State<ShowInfoMarkets> {
               TableRow(children: [
                 TableCell(
                     child: Container(
-                      margin: EdgeInsets.only(top: 10, bottom: 4),
-                      child: Text(
-                        "",
-                        style: TextStyle(
-                          fontFamily: AppFonts.fontTitle,
-                          color: Colors.white,
-                          fontSize: 14,
-                        ),
-                      ),
-                    )),
+                  margin: EdgeInsets.only(top: 10, bottom: 4),
+                  child: Text(
+                    "",
+                    style: TextStyle(
+                      fontFamily: AppFonts.fontTitle,
+                      color: Colors.white,
+                      fontSize: 14,
+                    ),
+                  ),
+                )),
                 TableCell(
                     child: Container(
-                      margin: EdgeInsets.only(top: 10, bottom: 4),
-                      child: Text(
-                        "Mercados",
-                        style: TextStyle(
-                          fontFamily: AppFonts.fontTitle,
-                          color: Colors.white,
-                          fontSize: 14,
-                        ),
-                      ),
-                    )),
+                  margin: EdgeInsets.only(top: 10, bottom: 4),
+                  child: Text(
+                    "Mercados",
+                    style: TextStyle(
+                      fontFamily: AppFonts.fontTitle,
+                      color: Colors.white,
+                      fontSize: 14,
+                    ),
+                  ),
+                )),
                 TableCell(
                     child: Container(
-                      margin: EdgeInsets.only(top: 10, bottom: 4),
-                      child: Text(
-                        "Cotización",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: AppFonts.fontTitle,
-                          color: Colors.white,
-                          fontSize: 14,
-                        ),
-                      ),
-                    )),
+                  margin: EdgeInsets.only(top: 10, bottom: 4),
+                  child: Text(
+                    "Cotización",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: AppFonts.fontTitle,
+                      color: Colors.white,
+                      fontSize: 14,
+                    ),
+                  ),
+                )),
                 TableCell(
                     child: Container(
-                      margin: EdgeInsets.only(top: 10, bottom: 4),
-                      child: Text(
-                        "",
-                        style: TextStyle(
-                          fontFamily: AppFonts.fontTitle,
-                          color: Colors.white,
-                          fontSize: 14,
-                        ),
-                      ),
-                    )),
+                  margin: EdgeInsets.only(top: 10, bottom: 4),
+                  child: Text(
+                    "",
+                    style: TextStyle(
+                      fontFamily: AppFonts.fontTitle,
+                      color: Colors.white,
+                      fontSize: 14,
+                    ),
+                  ),
+                )),
+                // TableCell(
+                //     child: Container(
+                //   margin: EdgeInsets.only(top: 10, bottom: 4),
+                //   child: GestureDetector(
+                //     onTap: widget.onTab,
+                //     child: Icon(
+                //       Icons.refresh_outlined,
+                //       color: Colors.white,
+                //     ),
+                //   ),
+                // ))
                 TableCell(
-                    child: Container(
-                      margin: EdgeInsets.only(top: 10, bottom: 4),
-                      child: GestureDetector(
-                        onTap: widget.onTab,
-                        child: Icon(
-                          Icons.refresh_outlined,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ))
+                    child: GestureDetector(
+                  onTap: widget.onTab,
+                  child: Container(
+                    margin: EdgeInsets.only(top: 10, bottom: 4),
+                    child: Icon(
+                      Icons.refresh_outlined,
+                      color: Colors.white,
+                    ),
+                  ),
+                ))
               ]),
             ],
           ),
@@ -117,76 +132,82 @@ class _ShowInfoMarkets extends State<ShowInfoMarkets> {
   TableRow _infoMarket(ModelMarket market) {
     return TableRow(children: [
       TableCell(
-          child: Padding(
-            padding: EdgeInsets.all(6),
-            child: GestureDetector(
-              onTap: openHistoryPriceMarket,
-              child: Icon(
-                Icons.bar_chart,
-                size: 12,
-                color: AppColors.blue,
-              ),
-            ),
-          )),
+          child: GestureDetector(
+        onTap: () => openHistoryPriceMarket(market.nombre, widget.marketType),
+        child: Padding(
+          padding: EdgeInsets.only(top: 4, bottom: 6, left: 2, right: 2),
+          child: Icon(
+            Icons.bar_chart,
+            size: 12,
+            color: AppColors.blue,
+          ),
+        ),
+      )),
+      TableCell(
+          child: GestureDetector(
+              onTap: () =>
+                  openHistoryPriceMarket(market.nombre, widget.marketType),
+              child: Padding(
+                padding: EdgeInsets.only(top: 4, bottom: 6, left: 2, right: 2),
+                child: Text(
+                  market.nombre,
+                  style: TextStyle(
+                      fontFamily: AppFonts.fontTitle,
+                      fontSize: 11,
+                      color: AppColors.gayDark),
+                ),
+              ))),
       TableCell(
           child: Padding(
-            padding: EdgeInsets.all(6),
-            child: Text(
-              market.nombre,
-              style: TextStyle(
-                  fontFamily: AppFonts.fontTitle,
-                  fontSize: 11,
-                  color: AppColors.gayDark),
-            ),
-          )),
+        padding: EdgeInsets.only(top: 4, bottom: 6, left: 2, right: 2),
+        child: Text(
+          market.precio,
+          textAlign: TextAlign.right,
+          style: TextStyle(
+              fontFamily: AppFonts.fontQuantities, color: AppColors.gayDark),
+        ),
+      )),
       TableCell(
           child: Padding(
-            padding: EdgeInsets.all(6),
-            child: Text(
-              market.precio,
-              textAlign: TextAlign.right,
-              style: TextStyle(
-                  fontFamily: AppFonts.fontQuantities,
-                  color: AppColors.gayDark),
-            ),
-          )),
-      TableCell(
-          child: Padding(
-            padding: EdgeInsets.all(6),
-            child: Text(
-              market.par,
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  fontFamily: AppFonts.fontQuantities,
-                  fontSize: 9,
-                  color: AppColors.gayDark),
-            ),
-          )),
+        padding: EdgeInsets.only(top: 4, bottom: 6, left: 2, right: 2),
+        child: Text(
+          market.par,
+          textAlign: TextAlign.left,
+          style: TextStyle(
+              fontFamily: AppFonts.fontQuantities,
+              fontSize: 9,
+              color: AppColors.gayDark),
+        ),
+      )),
       TableCell(
           child: Container(
-            padding: EdgeInsets.all(4),
-            margin: EdgeInsets.only(top: 2),
-            decoration: BoxDecoration(
-              color:
+        padding: EdgeInsets.only(top: 4, bottom: 6, left: 2, right: 2),
+        margin: EdgeInsets.only(top: 2),
+        decoration: BoxDecoration(
+          color:
               (double.parse(market.movilidad) < 0) ? Colors.red : Colors.green,
-              borderRadius: BorderRadius.circular(6.0),
-            ),
-            child: Text(
-              market.movilidad,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontFamily: AppFonts.fontSubTitle,
-                  fontSize: 10,
-                  color: Colors.white),
-            ),
-          ))
+          borderRadius: BorderRadius.circular(6.0),
+        ),
+        child: Text(
+          market.movilidad,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontFamily: AppFonts.fontSubTitle,
+              fontSize: 10,
+              color: Colors.white),
+        ),
+      ))
     ]);
   }
 
-  void openHistoryPriceMarket() {
+  void openHistoryPriceMarket(String marketName, String marketType) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => HistoryPriceMarket()),
+      MaterialPageRoute(
+          builder: (context) => HistoryPriceMarket(
+                marketName: marketName,
+                marketType: marketType,
+              )),
     );
   }
 }

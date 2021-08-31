@@ -1,9 +1,14 @@
-import 'package:coven_native/News/ui/widgets/charts.dart';
+import 'package:coven_native/Markets/ui/widgets/charts.dart';
 import 'package:coven_native/ui/widgets/backgroud.dart';
 import 'package:coven_native/uitls/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class HistoryPriceMarket extends StatefulWidget {
+  final String marketName;
+  final String marketType;
+
+  const HistoryPriceMarket({Key? key, required this.marketName, required this.marketType}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() {
     return _HistoryPriceMarket();
@@ -11,11 +16,12 @@ class HistoryPriceMarket extends StatefulWidget {
 
 }
 
-class _HistoryPriceMarket extends State {
+class _HistoryPriceMarket extends State<HistoryPriceMarket> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          title: Text(widget.marketName),
             centerTitle: true,
             backgroundColor: AppColors.blue,
             leading: IconButton(
@@ -25,7 +31,7 @@ class _HistoryPriceMarket extends State {
         body: Stack(
           children: [
             Background(),
-            Charts()
+            Charts(marketType: widget.marketType, marketName: widget.marketName,)
           ],
         )
     );
