@@ -1,4 +1,4 @@
-import 'package:coven_native/Markets/ui/widgets/charts.dart';
+import 'package:coven_native/Markets/ui/screen/Charts.dart';
 import 'package:coven_native/ui/widgets/backgroud.dart';
 import 'package:coven_native/uitls/app_colors.dart';
 import 'package:flutter/material.dart';
