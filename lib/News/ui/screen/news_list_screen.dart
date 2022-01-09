@@ -8,7 +8,8 @@ import 'package:coven_native/ui/widgets/bottom_navigation.dart';
 import 'package:coven_native/ui/widgets/jloading_screen.dart';
 import 'package:coven_native/uitls/app_colors.dart';
 import 'package:coven_native/uitls/app_fonts.dart';
-import 'package:coven_native/uitls/firebase_fcm.dart';
+import 'package:coven_native/uitls/app_http.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:flutter/material.dart';
 
 import '../../model_news.dart';
@@ -33,6 +34,35 @@ class _NewsListScreen extends State<NewsListScreen> {
   @override
   void initState() {
     super.initState();
+    initPlatformState();
+  }
+
+  Future<void> initPlatformState() async {
+    if (!mounted) return;
+    OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
+
+    OneSignal.shared.consentGranted(true);
+    OneSignal.shared.setRequiresUserPrivacyConsent(false);
+
+    OneSignal.shared
+        .setSubscriptionObserver((OSSubscriptionStateChanges changes) {
+      print("SUBSCRIPTION STATE CHANGED: ${changes.jsonRepresentation()}");
+    });
+
+    OneSignal.shared.setPermissionObserver((OSPermissionStateChanges changes) {
+      print("PERMISSION STATE CHANGED: ${changes.jsonRepresentation()}");
+    });
+
+    await OneSignal.shared.setAppId( await AppHttp.getTokenOneSignal());
+
+    _handlePromptForPushPermission();
+  }
+
+  void _handlePromptForPushPermission() {
+    print("Prompting for Permission XXXX");
+    OneSignal.shared.promptUserForPushNotificationPermission().then((accepted) {
+      print("Accepted permission: $accepted");
+    });
   }
 
   @override
@@ -74,7 +104,7 @@ class _NewsListScreen extends State<NewsListScreen> {
                           : blocNews.getNewsForCategory(widget.categoryUrl),
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.waiting) {
-                          FirebaseFCM().registerTokenFCM();
+                          // FirebaseFCM().registerTokenFCM();
                         }
                         if (snapshot.connectionState == ConnectionState.done &&
                             snapshot.data != null) {

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:coven_native/News/bloc/bloc_news.dart';
 import 'package:coven_native/News/model_news.dart';
 import 'package:coven_native/News/ui/widgets/menu_news_category.dart';
@@ -7,6 +9,7 @@ import 'package:coven_native/uitls/app_colors.dart';
 import 'package:coven_native/uitls/app_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:intl/intl.dart';
 
 class DetailNews extends StatefulWidget {
   final ModelNews news;
@@ -90,7 +93,18 @@ class _DetailNews extends State<DetailNews> {
   }
 
   String removeAllHtmlTags(String htmlText) {
-    return htmlText.replaceAll(RegExp(r'<[^>]*>|&[^;]+;'), ' ');
+    htmlText = htmlText
+        .replaceAll('&uacute;', 'ú')
+        .replaceAll('&oacute;', 'ó')
+        .replaceAll('&eacute;', 'é')
+        .replaceAll('&iacute;', 'í')
+        .replaceAll('&aacute;', 'á')
+        .replaceAll('&ldquo;', '"')
+        .replaceAll('&rdquo;', '"')
+        .replaceAll('&nbsp;', ' ');
+
+
+    return Bidi.stripHtmlIfNeeded(htmlText);
   }
 
   static String formatDate(String dateToFormat) {
@@ -109,3 +123,4 @@ class _DetailNews extends State<DetailNews> {
     return numberToComplete < 10 ? "0$numberToComplete" : "$numberToComplete";
   }
 }
+
